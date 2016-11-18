@@ -9,6 +9,6 @@
     $responseDecoded = json_decode($response, true);
     curl_close($handle);
 
-    echo 'Source: ' . $text . '<br>';
+    echo 'Source: ' . $text .$url. '<br>';
     echo 'Translation: ' . $responseDecoded['data']['translations'][0]['translatedText'];
 ?>
