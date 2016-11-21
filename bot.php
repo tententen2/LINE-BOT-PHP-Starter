@@ -28,15 +28,15 @@ if (!is_null($events['events'])) {
     		foreach ($obj1 as $key => $jsons) {
     			foreach($jsons as $key => $value) {
     					// $ff = $value['detail'];
-    				// foreach($value as $key => $kk){
-    				// 		if($key == "time"){
-    				// 			$tmm = $kk;
-    				// 		}
-    				// 		if($key == 'detail'){
-    				// 			if($kk == $text){
-    				// 				$ff = $tmm;
-    				// 			}
-    				// 		}
+    				foreach($value as $key => $kk){
+    						if($key == "time"){
+    							$tmm = $kk;
+    						}
+    						if($key == 'detail'){
+    							if($kk == $text){
+    								$ff = $tmm;
+    							}
+    						}
     				}
 
     				// if($key == 'time'){
