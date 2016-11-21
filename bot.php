@@ -78,19 +78,19 @@ if (!is_null($events['events'])) {
 					'title' => 'Menu',
 					'text' => 'Please'
 					'actions' => [
-						{
+						[
 							'type' => 'postback',
 							'label' => 'buy',
 							'date' => 'action=buy&itemid=123'	
-						},{
+						],[
 							'type' => 'postback',
 							'label' => 'buy1',
 							'date' => 'action=buy&itemid=1231'
-						},{	
+						],[	
 							'type' => 'uri',
 							'label' => 'buys',
 							'uri' =>  'http://example.com/page/123'
-						}
+						]
 					]
 				]
 			];
