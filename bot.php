@@ -56,7 +56,7 @@ if (!is_null($events['events'])) {
 
 			$messages = [
 				'type' => 'text',
-				'text' => $text. '/n เริ่มประมูลวันที่'.$ff.'/n ราคาประมูลครั้งละ '.$money.' บาท !! /n/n ไปลงทะเบียนกันเลย ><'
+				'text' => $text. '<br />\r\n เริ่มประมูลวันที่'.$ff.'/n ราคาประมูลครั้งละ '.$money.' บาท !! /n/n ไปลงทะเบียนกันเลย ><'
 				// 'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11.'ประเภท1 '.$ff
 			];
 
