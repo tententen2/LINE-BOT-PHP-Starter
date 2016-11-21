@@ -69,39 +69,39 @@ if (!is_null($events['events'])) {
 
 			];
 
-			// $jsondata = [
-			// 	'type' => 'template',
-			// 	'altText' => 'this is a buttons template',
-			// 	'template' => {
-			// 		'type' => 'buttons',
-			// 		'thumbnailImageUrl' => 'https://www.eff.org/files/tor-https-1.png',
-			// 		'title' => 'Menu',
-			// 		'text' => 'Please'
-			// 		'actions' => [
-			// 			{
-			// 				'type' => 'postback',
-			// 				'label' => 'buy',
-			// 				'date' => 'action=buy&itemid=123'	
-			// 			},{
-			// 				'type' => 'postback',
-			// 				'label' => 'buy1',
-			// 				'date' => 'action=buy&itemid=1231'
-			// 			},{	
-			// 				'type' => 'uri',
-			// 				'label' => 'buys',
-			// 				'uri' =>  'http://example.com/page/123'
-			// 			}
-			// 		]
-			// 	}
-			// ];
+			$jsondata = [
+				'type' => 'template',
+				'altText' => 'this is a buttons template',
+				'template' => {
+					'type' => 'buttons',
+					'thumbnailImageUrl' => 'https://www.eff.org/files/tor-https-1.png',
+					'title' => 'Menu',
+					'text' => 'Please'
+					'actions' => [
+						{
+							'type' => 'postback',
+							'label' => 'buy',
+							'date' => 'action=buy&itemid=123'	
+						},{
+							'type' => 'postback',
+							'label' => 'buy1',
+							'date' => 'action=buy&itemid=1231'
+						},{	
+							'type' => 'uri',
+							'label' => 'buys',
+							'uri' =>  'http://example.com/page/123'
+						}
+					]
+				}
+			];
 
-			$jsonnn = array('type' => 'template','altText' => 'this is a buttons template','template' => array('type' => 'buttons','thumbnailImageUrl' =>
-				'https://www.eff.org/files/tor-https-1.png','title' => 'Menu','text' => 'Please','actions' => array(array('type' => 'postback','label' => 'date' => 'action=buy&itemid=123'),array('type' => 'postback','label' => 'date' => 'action=buy&itemid=123'),array('type' => 'uri','label' => 'buys' => 'http://example.com/page/123'))));
+			// $jsonnn = array('type' => 'template','altText' => 'this is a buttons template','template' => array('type' => 'buttons','thumbnailImageUrl' =>
+			// 	'https://www.eff.org/files/tor-https-1.png','title' => 'Menu','text' => 'Please','actions' => array(array('type' => 'postback','label' => 'date' => 'action=buy&itemid=123'),array('type' => 'postback','label' => 'date' => 'action=buy&itemid=123'),array('type' => 'uri','label' => 'buys' => 'http://example.com/page/123'))));
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => array($jsonnn),
+				'messages' => [$jsondata],
 			];
 			
 			// $data1 = [
