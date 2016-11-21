@@ -25,8 +25,8 @@ if (!is_null($events['events'])) {
     		curl_close($ch3);
     		$obj1 = json_decode($retValue,true);
     		foreach ($obj1 as $key => $jsons) {
-    			$jj = $key;
     			foreach($jsons as $key => $value) {
+    			$jj = $key;
     				if($key == 'time'){
     					$timee = $value;
     				}
