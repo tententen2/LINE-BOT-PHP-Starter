@@ -28,7 +28,7 @@ if (!is_null($events['events'])) {
     			foreach($jsons as $key => $value) {
     				foreach($value as $key => $kk){
     						$ff = $key;
-    						if($key == 'time'){
+    						if($key == "time"){
     							$tt = $kk;
     						}
     						if($key == $text){
