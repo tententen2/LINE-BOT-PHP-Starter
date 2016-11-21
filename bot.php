@@ -65,7 +65,7 @@ if (!is_null($events['events'])) {
 
 			$messages = [
 				'type' => 'text',
-				'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$obj1.'date '.$result_text11
+				'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$obj.'date '.$result_text11
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
