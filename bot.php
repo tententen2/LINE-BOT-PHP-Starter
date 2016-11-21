@@ -77,21 +77,21 @@ if (!is_null($events['events'])) {
 					"thumbnailImageUrl" => "https://www.eff.org/files/tor-https-1.png",
 					"title" => "Menu",
 					"text" => "Please",
-					// "actions" => [
-					// 	[
-					// 		"type" => "postback",
-					// 		"label" => "buy",
-					// 		"data" => "action=buy&itemid=123"	
-					// 	],[
-					// 		"type" => "postback",
-					// 		"label" => "buy1",
-					// 		"data" => "action=buy&itemid=1231"
-					// 	],[	
-					// 		"type" => "uri",
-					// 		"label" => "buys",
-					// 		"uri" =>  "http://example.com/page/123"
-					// 	]
-					// ]
+					"actions" => [
+						[
+							"type" => "postback",
+							"label" => "buy",
+							"data" => "action=buy&itemid=123"	
+						],[
+							"type" => "postback",
+							"label" => "buy1",
+							"data" => "action=buy&itemid=1231"
+						],[	
+							"type" => "uri",
+							"label" => "buys",
+							"uri" =>  "http://example.com/page/123"
+						]
+					]
 				]
 			];
 
