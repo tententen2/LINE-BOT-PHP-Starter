@@ -29,15 +29,11 @@ if (!is_null($events['events'])) {
     			foreach($jsons as $key => $value) {
     					// $ff = $value['detail'];
     				foreach($value as $key => $kk){
-    						if($key == "time"){
-    							$tmm = $kk;
-    						}
     						if($key == 'detail'){
     							if($kk == $text){
-    								$ff = $tmm;
+    								$ff = $value['time'];
     							}
     						}
-    						$ff = $value['detail'];
     				}
 
     				// if($key == 'time'){
