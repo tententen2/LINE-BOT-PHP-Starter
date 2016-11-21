@@ -26,11 +26,13 @@ if (!is_null($events['events'])) {
     		$obj1 = json_decode($retValue,true);
     		foreach ($obj1 as $key => $jsons) {
     			foreach($jsons as $key => $value) {
-    			$jj = $value;
-    			
-    				if($key == 'time'){
-    					$timee = $value;
+    				foreach($value as $key => $kk){
+    						$jj = $kk;
     				}
+
+    				// if($key == 'time'){
+    				// 	$timee = $value;
+    				// }
 
     	// 			if($key == 'detail'){
     	// 					if($value == 'Dora')
