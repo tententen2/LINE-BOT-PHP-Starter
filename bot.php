@@ -56,17 +56,10 @@ if (!is_null($events['events'])) {
 
 
 			$messages = [
-				'type' => 'template',
+				'type' => 'text',
 				'alttext' => $name."\r\n\r\n".'เริ่มประมูลวันที่ '.substr($ff,0,10)."\r\n".'เวลา '.substr($ff,11,18)."\r\n".'ราคาประมูลครั้งละ '.$money.' บาท !!'."\r\n\r\n".'ไปลงทะเบียนกันเลย ><'
 				// 'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11.'ประเภท1 '.$ff
 			];
-
-			// $content = [
-			// 	'type' => 'image',
-			// 	'originalContentUrl' => 'http://sv6.postjung.com/picpost/data/184/184340-1-2995.jpg',
-			// 	'previewImageUrl' => 'http://f.ptcdn.info/464/041/000/o505xu5rsDUycpMYem9-o.jpg'
-			// ];
-
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
