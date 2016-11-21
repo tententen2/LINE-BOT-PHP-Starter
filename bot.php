@@ -56,8 +56,8 @@ if (!is_null($events['events'])) {
 
 
 			$messages = [
-				'type' => 'text',
-				'text' => $name."\r\n\r\n".'เริ่มประมูลวันที่ '.substr($ff,0,10)."\r\n".'เวลา '.substr($ff,11,18)."\r\n".'ราคาประมูลครั้งละ '.$money.' บาท !!'."\r\n\r\n".'ไปลงทะเบียนกันเลย ><'
+				'type' => 'template',
+				'alttext' => $name."\r\n\r\n".'เริ่มประมูลวันที่ '.substr($ff,0,10)."\r\n".'เวลา '.substr($ff,11,18)."\r\n".'ราคาประมูลครั้งละ '.$money.' บาท !!'."\r\n\r\n".'ไปลงทะเบียนกันเลย ><'
 				// 'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11.'ประเภท1 '.$ff
 			];
 
@@ -72,7 +72,6 @@ if (!is_null($events['events'])) {
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
-				'content' => [$content],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
