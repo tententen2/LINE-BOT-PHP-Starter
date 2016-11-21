@@ -131,6 +131,11 @@ if (!is_null($events['events'])) {
 
 			// echo $result.$result1 . "\r\n";
 
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$image],
+			];
+
 			$post = json_encode($data);
 			// $post1 = json_encode($data1);
 
