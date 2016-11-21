@@ -105,6 +105,7 @@ if (!is_null($events['events'])) {
 			// 	'messages' => [$tem1plat0e],
 			// ];
 			$post = json_encode($data);
+			echo $post;
 			// $post1 = json_encode($data1);
 
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
