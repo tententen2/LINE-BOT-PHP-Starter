@@ -71,27 +71,27 @@ if (!is_null($events['events'])) {
 			$template = [
 				'type' => 'template',
 				'altText' => 'this is a buttons template',
-				'template' => {
+				'template' => [
 					'type' => 'buttons',
 					'thumbnailImageUrl' => 'https://www.eff.org/files/tor-https-1.png',
 					'title' => 'Menu',
 					'text' => 'Please',
 					'actions' => [
-						{
+						[
 							'type' => 'postback',
 							'label1' => 'buy',
 							'date' => 'action=buy&itemid=123'	
-						},{
+						],[
 							'type' => 'postback',
 							'label1' => 'buy1',
 							'date' => 'action=buy&itemid=1231'
-						},{	
+						],[	
 							'type' => 'uri',
 							'label1' => 'buy1',
 							'date' => 'action=buy&itemid=1231'
-						}
+						]
 					]
-				}
+				]
 			];
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
