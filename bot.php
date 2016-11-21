@@ -77,7 +77,7 @@ if (!is_null($events['events'])) {
 					'thumbnailImageUrl' => 'https://www.eff.org/files/tor-https-1.png',
 					'title' => 'Menu',
 					'text' => 'Please'
-					'actions' => [
+					'actions' => {
 						[
 							'type' => 'postback',
 							'label' => 'buy',
@@ -91,7 +91,7 @@ if (!is_null($events['events'])) {
 							'label' => 'buys',
 							'uri' =>  'http://example.com/page/123'
 						]
-					]
+					}
 				]
 			];
 
