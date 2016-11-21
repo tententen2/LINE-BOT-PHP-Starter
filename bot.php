@@ -73,7 +73,7 @@ if (!is_null($events['events'])) {
 				"type" => "template",
 				"altText" => "this is a buttons template",
 				"template" => [
-					'type' => "buttons",
+					"type" => "buttons",
 					"thumbnailImageUrl" => "https://www.eff.org/files/tor-https-1.png",
 					"title" => "Menu",
 					"text" => "Please",
