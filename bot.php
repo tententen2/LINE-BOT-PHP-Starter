@@ -69,53 +69,57 @@ if (!is_null($events['events'])) {
 
 			];
 
-			// $jsondata = [
-			// 	'type' => 'template',
-			// 	'altText' => 'this is a buttons template',
-			// 	'template' => [
-			// 		'type' => 'buttons',
-			// 		'thumbnailImageUrl' => 'https://www.eff.org/files/tor-https-1.png',
-			// 		'title' => 'Menu',
-			// 		'text' => 'Please'
-			// 		'actions' => {
-			// 			[
-			// 				'type' => 'postback',
-			// 				'label' => 'buy',
-			// 				'date' => 'action=buy&itemid=123'	
-			// 			],[
-			// 				'type' => 'postback',
-			// 				'label' => 'buy1',
-			// 				'date' => 'action=buy&itemid=1231'
-			// 			],[	
-			// 				'type' => 'uri',
-			// 				'label' => 'buys',
-			// 				'uri' =>  'http://example.com/page/123'
-			// 			]
-			// 		}
-			// 	]
-			// ];
-
-
 			$jsondata = [
-				"type"=>"template",
-					  "altText"=>"this is a confirm template",
-					  "template"=>[
-					      "type"=>"confirm",
-					      "text"=> "ssss",
-					      "actions"=> [
-						  [
-						    "type"=>"message",
-						    "label"=>"Yes",
-						    "text"=>"yes"
-						  ],
-						  [
-						    "type"=>"message",
-						    "label"=>"No",
-						    "text"=>"no"
-						  ]
-					      ]
+				"type" => "template",
+				"altText" => "this is a buttons template",
+				"template" => [
+					'type' => "buttons",
+					"thumbnailImageUrl" => "https://www.eff.org/files/tor-https-1.png",
+					"title" => "Menu",
+					"text" => "Please",
+					"actions" => [
+						[
+							"type" => "postback",
+							"label" => "buy",
+							"date" => "action=buy&itemid=123"	
+						],[
+							"type" => "postback",
+							"label" => "buy1",
+							"date" => "action=buy&itemid=1231"
+						],[	
+							"type" => "uri",
+							"label" => "buys",
+							"uri" =>  "http://example.com/page/123"
+						]
 					]
+				]
 			];
+
+			
+
+
+
+
+			// $jsondata = [
+			// 	"type"=>"template",
+			// 		  "altText"=>"this is a confirm template",
+			// 		  "template"=>[
+			// 		      "type"=>"confirm",
+			// 		      "text"=> "ssss",
+			// 		      "actions"=> [
+			// 			  [
+			// 			    "type"=>"message",
+			// 			    "label"=>"Yes",
+			// 			    "text"=>"yes"
+			// 			  ],
+			// 			  [
+			// 			    "type"=>"message",
+			// 			    "label"=>"No",
+			// 			    "text"=>"no"
+			// 			  ]
+			// 		      ]
+			// 		]
+			// ];
 
 			// $jsonnn = array('type' => 'template','altText' => 'this is a buttons template','template' => array('type' => 'buttons','thumbnailImageUrl' =>
 			// 	'https://www.eff.org/files/tor-https-1.png','title' => 'Menu','text' => 'Please','actions' => array(array('type' => 'postback','label' => 'date' => 'action=buy&itemid=123'),array('type' => 'postback','label' => 'date' => 'action=buy&itemid=123'),array('type' => 'uri','label' => 'buys' => 'http://example.com/page/123'))));
