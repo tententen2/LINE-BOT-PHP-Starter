@@ -17,9 +17,25 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
+			$ch1 = curl_init();
+			curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch1, CURLOPT_URL, 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='.$text);
+			$result1 = curl_exec($ch1);
+			curl_close($ch1);
+			$obj = json_decode($result1, true);
+			foreach($obj['query']['pages'] as $key => $val){
+				$result_text = $val['extract'];
+			}
+			if(empty($result_text)){
+				$result_text = 'ไม่พบข้อมูล';
+			}
+
+
+
 			$messages = [
 				'type' => 'text',
-				'text' => 'คุณพิมพิ์ :'.$text
+				'text' => 'ผลการค้นหา :'.$result_text
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
