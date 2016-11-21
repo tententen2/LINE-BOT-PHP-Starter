@@ -62,9 +62,14 @@ if (!is_null($events['events'])) {
 			];
 
 			$image = [
-				'type' => 'image',
-				'originalContentUrl' => 'https://www.eff.org/files/tor-https-1.png',
-				'previewImageUrl' => 'https://www.eff.org/files/tor-https-1.png'
+			"type": "image",
+    "originalContentUrl": "https://www.eff.org/files/tor-https-1.png",
+    "previewImageUrl": "https://www.eff.org/files/tor-https-1.png"
+
+			
+				// 'type' => 'image',
+				// 'originalContentUrl' => 'https://www.eff.org/files/tor-https-1.png',
+				// 'previewImageUrl' => 'https://www.eff.org/files/tor-https-1.png'
 
 			];
 			// Make a POST Request to Messaging API to reply to sender
