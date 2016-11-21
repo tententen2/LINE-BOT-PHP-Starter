@@ -69,7 +69,7 @@ if (!is_null($events['events'])) {
 			];
 
 			$jsondata = '
-				{
+				
   "type": "template",
   "altText": "this is a buttons template",
   "template": {
@@ -95,7 +95,7 @@ if (!is_null($events['events'])) {
           }
       ]
   }
-}
+
 			';
 
 			// $tem1plat0e = [
