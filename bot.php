@@ -116,11 +116,19 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post1);
-			$result1 = curl_exec($ch);
 			curl_close($ch);
-
 			echo $result . "\r\n";
+
+			$ch4 = curl_init($url);
+			curl_setopt($ch4, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch4, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch4, CURLOPT_POSTFIELDS, $post1);
+			curl_setopt($ch4, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch4, CURLOPT_FOLLOWLOCATION, 1);
+			$result1 = curl_exec($ch4);
+			curl_close($ch4);
+
+
 			echo $result1 . "\r\n";
 		}
 	}
