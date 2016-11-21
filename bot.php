@@ -37,6 +37,7 @@ if (!is_null($events['events'])) {
     								$ff = $tmm;
     							}
     						}
+    						$ff = $value['detail'];
     				}
 
     				// if($key == 'time'){
@@ -77,7 +78,7 @@ if (!is_null($events['events'])) {
 
 			$messages = [
 				'type' => 'text',
-				'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11.'ประเภท '.$ff
+				'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11.'ประเภท1 '.$ff
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
