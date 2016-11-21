@@ -27,7 +27,12 @@ if (!is_null($events['events'])) {
     		foreach ($obj1 as $key => $jsons) {
     			foreach($jsons as $key => $value) {
     				foreach($value as $key => $kk){
-    						$jj = $kk;
+    						if($key == 'time'){
+    							$tt = $kk;
+    						}
+    						if($key == $text){
+    						$ff = $tt;
+    						}
     				}
 
     				// if($key == 'time'){
@@ -68,7 +73,7 @@ if (!is_null($events['events'])) {
 
 			$messages = [
 				'type' => 'text',
-				'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11.'ประเ.ภท '.$jj
+				'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11.'ประเ.ภท '.$ff
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
