@@ -100,12 +100,12 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages],
 			];
 			
-			// $data1 = [
-			// 	'replyToken' => $replyToken,
-			// 	'messages' => [$image],
-			// ];
+			$data1 = [
+				'replyToken' => $replyToken,
+				'messages' => [$image],
+			];
 			$post = json_encode($data);
-			// $post1 = json_encode($data1);
+			$post1 = json_encode($data1);
 
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
@@ -119,17 +119,17 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 			echo $result . "\r\n";
 
-			// $ch4 = curl_init($url);
-			// curl_setopt($ch4, CURLOPT_CUSTOMREQUEST, "POST");
-			// curl_setopt($ch4, CURLOPT_RETURNTRANSFER, true);
-			// curl_setopt($ch4, CURLOPT_POSTFIELDS, $post1);
-			// curl_setopt($ch4, CURLOPT_HTTPHEADER, $headers);
-			// curl_setopt($ch4, CURLOPT_FOLLOWLOCATION, 1);
-			// $result1 = curl_exec($ch4);
-			// curl_close($ch4);
+			$ch4 = curl_init($url);
+			curl_setopt($ch4, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch4, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch4, CURLOPT_POSTFIELDS, $post1);
+			curl_setopt($ch4, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch4, CURLOPT_FOLLOWLOCATION, 1);
+			$result1 = curl_exec($ch4);
+			curl_close($ch4);
 
 
-			// echo $result1 . "\r\n";
+			echo $result1 . "\r\n";
 		}
 	}
 }
