@@ -54,7 +54,7 @@ if (!is_null($events['events'])) {
 			}
 
 
-			$tmetme = json_decode($text);
+			$tmetme = json_encode($text);
 
 			$messages = [
 				'type' => 'text',
