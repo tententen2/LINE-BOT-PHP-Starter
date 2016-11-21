@@ -17,6 +17,21 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
+			 $ch3 = curl_init();
+    		curl_setopt($ch3, CURLOPT_SSL_VERIFYPEER, false);
+    		curl_setopt($ch3, CURLOPT_RETURNTRANSFER,true);
+    		curl_setopt($ch3, CURLOPT_URL,'https://e-auction-c1430.firebaseio.com/product.json');
+    		$retValue = curl_exec($ch3);          
+    		curl_close($ch3);
+    		$obj1 = json_decode($retValue,true);
+    		$json_length = strlen( $retValue );
+    		foreach ($obj1['Accessory']['KW0kAtaRoKuucaQEtsm'] as $key => $value) {
+    			$result_text11 = $value['date'];
+    		}
+
+
+
+
 			$ch1 = curl_init();
 			curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
@@ -35,7 +50,7 @@ if (!is_null($events['events'])) {
 
 			$messages = [
 				'type' => 'text',
-				'text' => 'ผลการค้นหา :'.$result_text
+				'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$json_length.'date '.$result_text11
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
