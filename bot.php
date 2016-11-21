@@ -32,6 +32,7 @@ if (!is_null($events['events'])) {
     								$ff = $value['time'];
     								$money = $value['priceforbit'];
     								$name = $kk;
+    								$urlimg = $value['url'];
     							}
     						}
     				}
@@ -74,9 +75,9 @@ if (!is_null($events['events'])) {
 				"altText" => "this is a buttons template",
 				"template" => [
 					"type" => "buttons",
-					"thumbnailImageUrl" => "https://www.eff.org/files/tor-https-1.png",
-					"title" => "Menu",
-					"text" => "Please",
+					"thumbnailImageUrl" => $urlimg,
+					"title" => $name,
+					"text" => substr($ff,0,10),
 					"actions" => [
 						[
 							"type" => "postback",
