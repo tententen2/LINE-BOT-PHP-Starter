@@ -97,9 +97,16 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$template],
+				'messages' => [$image],
+			];
+			
+			$data1 = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
 			];
 			$post = json_encode($data);
+			$post1 = json_encode($data1);
+
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
@@ -109,9 +116,12 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post1);
+			$result1 = curl_exec($ch);
 			curl_close($ch);
 
 			echo $result . "\r\n";
+			echo $result1 . "\r\n";
 		}
 	}
 }
