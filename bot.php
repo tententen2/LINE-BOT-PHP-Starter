@@ -30,11 +30,11 @@ if (!is_null($events['events'])) {
     					$timee = $value;
     				}
 
-    				if($key == 'detail'){
-    						if($value == 'Dora')
- 							$result_text11 = $value;
- 							$tine = $timee;
-					}
+    	// 			if($key == 'detail'){
+    	// 					if($value == 'Dora')
+ 				// 			$result_text11 = $value;
+ 				// 			$tine = $timee;
+					// }
     			}
 
     		}
@@ -64,7 +64,7 @@ if (!is_null($events['events'])) {
 
 			$messages = [
 				'type' => 'text',
-				'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$tine.'date '.$result_text11
+				'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
