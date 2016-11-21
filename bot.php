@@ -56,9 +56,34 @@ if (!is_null($events['events'])) {
 
 
 			$messages = [
-				'type' => 'template',
-				'alttext' => $name."\r\n\r\n".'เริ่มประมูลวันที่ '.substr($ff,0,10)."\r\n".'เวลา '.substr($ff,11,18)."\r\n".'ราคาประมูลครั้งละ '.$money.' บาท !!'."\r\n\r\n".'ไปลงทะเบียนกันเลย ><'
+				// 'type' => 'template',
+				// 'alttext' => $name."\r\n\r\n".'เริ่มประมูลวันที่ '.substr($ff,0,10)."\r\n".'เวลา '.substr($ff,11,18)."\r\n".'ราคาประมูลครั้งละ '.$money.' บาท !!'."\r\n\r\n".'ไปลงทะเบียนกันเลย ><'
 				// 'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11.'ประเภท1 '.$ff
+				"type": "template",
+  "altText": "this is a buttons template",
+  "template": {
+      "type": "buttons",
+      "thumbnailImageUrl": "http://sv6.postjung.com/picpost/data/184/184340-1-2995.jpg",
+      "title": "Menu",
+      "text": "Please select",
+      "actions": [
+          {
+            "type": "postback",
+            "label": "Buy",
+            "data": "action=buy&itemid=123"
+          },
+          {
+            "type": "postback",
+            "label": "Add to cart",
+            "data": "action=add&itemid=123"
+          },
+          {
+            "type": "uri",
+            "label": "View detail",
+            "uri": "http://example.com/page/123"
+          }
+      ]
+  }
 			];
 
 			$content = [
