@@ -68,6 +68,36 @@ if (!is_null($events['events'])) {
 
 			];
 
+			$jsondata = '
+				{
+  "type": "template",
+  "altText": "this is a buttons template",
+  "template": {
+      "type": "buttons",
+      "thumbnailImageUrl": "https://www.eff.org/files/tor-https-1.png",
+      "title": "Menu",
+      "text": "Please select",
+      "actions": [
+          {
+            "type": "postback",
+            "label": "Buy",
+            "data": "action=buy&itemid=123"
+          },
+          {
+            "type": "postback",
+            "label": "Add to cart",
+            "data": "action=add&itemid=123"
+          },
+          {
+            "type": "uri",
+            "label": "View detail",
+            "uri": "http://example.com/page/123"
+          }
+      ]
+  }
+}
+			';
+
 			// $tem1plat0e = [
 			// 	'type' => 'template0',
 			// 	'altText' => 'this is a buttons template',
@@ -95,16 +125,16 @@ if (!is_null($events['events'])) {
 			// ];
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages],
-			];
+			// $data = [
+			// 	'replyToken' => $replyToken,
+			// 	'messages' => [$messages],
+			// ];
 			
 			// $data1 = [
 			// 	'replyToken' => $replyToken,
 			// 	'messages' => [$tem1plat0e],
 			// ];
-			$post = json_encode($data);
+			// $post = json_encode($data);
 			// $post1 = json_encode($data1);
 
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -112,7 +142,7 @@ if (!is_null($events['events'])) {
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $jsondata);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
