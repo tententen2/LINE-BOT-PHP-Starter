@@ -63,8 +63,8 @@ if (!is_null($events['events'])) {
 
 			$image = [
 				'type' => 'image',
-				'originalContentUrl' => 'http://f.ptcdn.info/464/041/000/o505xu5rsDUycpMYem9-o.jpg',
-				'previewImageUrl' => 'http://sv6.postjung.com/picpost/data/184/184340-1-2995.jpg'
+				'originalContentUrl' => 'https://www.eff.org/files/tor-https-1.png',
+				'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/d/da/Internet2.jpg'
 
 			];
 			// Make a POST Request to Messaging API to reply to sender
