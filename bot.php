@@ -27,6 +27,7 @@ if (!is_null($events['events'])) {
     		foreach ($array as $key => $jsons) {
     			foreach($jsons as $key => $value) {
     				if($key == 'time'){
+    					echo $value;
     					$timee = $value;
     				}
 
