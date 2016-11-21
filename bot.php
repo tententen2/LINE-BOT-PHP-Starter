@@ -30,8 +30,10 @@ if (!is_null($events['events'])) {
     						if($key == 'time'){
     							$tmm = $kk;
     						}
-    						if($kk == $text){
-    						$ff = $tmm;
+    						if($key == 'detail'){
+    							if($kk == $text){
+    								$ff = $tmm;
+    							}
     						}
     				}
 
