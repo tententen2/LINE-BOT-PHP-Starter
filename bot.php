@@ -24,10 +24,24 @@ if (!is_null($events['events'])) {
     		$retValue = curl_exec($ch3);          
     		curl_close($ch3);
     		$obj1 = json_decode($retValue,true);
-    		$json_length = strlen( $obj1 );
-    		foreach ($obj1['Accessory']['KW0kAtaRoKuucaQEtsm'] as $key => $value) {
-    			$result_text11 = $value['date'];
+    		foreach ($array as $key => $jsons) {
+    			foreach($jsons as $key => $value) {
+    				if($key == 'time'){
+    					$timee = $value;
+    				}
+
+    				if($key == 'detail'){
+    						if($value == 'Dora')
+ 							$result_text11 = $value;
+ 							$tine = $timee;
+					}
+    			}
+
     		}
+
+    		// foreach ($obj1['Accessory']['KW0kAtaRoKuucaQEtsm'] as $key => $value) {
+    		// 	$result_text11 = $value['date'];
+    		// }
 
 
 
@@ -50,7 +64,7 @@ if (!is_null($events['events'])) {
 
 			$messages = [
 				'type' => 'text',
-				'text' => 'ผลการค้นหา :'.$result_text.'ความยาว1 '.$json_length.'date '.$result_text11
+				'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$tine.'date '.$result_text11
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
