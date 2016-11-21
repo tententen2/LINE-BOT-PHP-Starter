@@ -81,11 +81,11 @@ if (!is_null($events['events'])) {
 						[
 							"type" => "postback",
 							"label" => "buy",
-							"date" => "action=buy&itemid=123"	
+							"data" => "action=buy&itemid=123"	
 						],[
 							"type" => "postback",
 							"label" => "buy1",
-							"date" => "action=buy&itemid=1231"
+							"data" => "action=buy&itemid=1231"
 						],[	
 							"type" => "uri",
 							"label" => "buys",
