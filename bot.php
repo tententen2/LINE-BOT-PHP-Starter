@@ -100,12 +100,12 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages],
 			];
 			
-			$data1 = [
-				'replyToken' => $replyToken,
-				'messages' => [$image],
-			];
+			// $data1 = [
+			// 	'replyToken' => $replyToken,
+			// 	'messages' => [$image],
+			// ];
 			$post = json_encode($data);
-			$post1 = json_encode($data1);
+			// $post1 = json_encode($data1);
 
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
