@@ -125,10 +125,10 @@ if (!is_null($events['events'])) {
 			// ];
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
-			// $data = [
-			// 	'replyToken' => $replyToken,
-			// 	'messages' => [$messages],
-			// ];
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$jsondata],
+			];
 			
 			// $data1 = [
 			// 	'replyToken' => $replyToken,
@@ -142,7 +142,7 @@ if (!is_null($events['events'])) {
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $jsondata);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
