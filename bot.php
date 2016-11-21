@@ -69,7 +69,7 @@ if (!is_null($events['events'])) {
 			];
 
 			$tem1plat0e = [
-				'type' => 'template',
+				'type' => 'template0',
 				'altText' => 'this is a buttons template',
 				'template' => [
 					'type' => 'buttons',
