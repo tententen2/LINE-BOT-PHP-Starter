@@ -63,8 +63,8 @@ if (!is_null($events['events'])) {
 
 			$image = [
 				'type' => 'image',
-				'originalContentUrl' => 'https://qrator.net/content/images/tech-icons/tec_filt_close.png',
-				'previewImageUrl' => 'https://www.whatissslcertificate.com/wp-content/uploads/2016/03/https_imp-120x120.jpg'
+				'originalContentUrl' => 'https://www.eff.org/files/tor-https-1.png',
+				'previewImageUrl' => 'https://www.eff.org/files/tor-https-1.png'
 
 			];
 			// Make a POST Request to Messaging API to reply to sender
