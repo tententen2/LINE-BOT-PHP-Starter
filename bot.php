@@ -61,11 +61,18 @@ if (!is_null($events['events'])) {
 				// 'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11.'ประเภท1 '.$ff
 			];
 
+			$image = [
+				'type' => 'image',
+				'originalContentUrl' => 'http://sv6.postjung.com/picpost/data/184/184340-1-2995.jpg',
+				'previewImageUrl' => 'http://f.ptcdn.info/464/041/000/o505xu5rsDUycpMYem9-o.jpg'
+			];
+
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
+				'image' => [$image],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
