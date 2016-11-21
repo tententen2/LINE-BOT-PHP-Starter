@@ -24,37 +24,19 @@ if (!is_null($events['events'])) {
     		$retValue = curl_exec($ch3);          
     		curl_close($ch3);
     		$obj1 = json_decode($retValue,true);
-    		$tmm = '222';
     		foreach ($obj1 as $key => $jsons) {
     			foreach($jsons as $key => $value) {
-    					// $ff = $value['detail'];
     				foreach($value as $key => $kk){
     						if($key == 'detail'){
     							if(strcasecmp($kk,$text) == 0){
     								$ff = $value['time'];
+    								$money = $value['priceforbit'];
     							}
     						}
     				}
-
-    				// if($key == 'time'){
-    				// 	$timee = $value;
-    				// }
-
-    	// 			if($key == 'detail'){
-    	// 					if($value == 'Dora')
- 				// 			$result_text11 = $value;
- 				// 			$tine = $timee;
-					// }
     			}
 
     		}
-
-    		// foreach ($obj1['Accessory']['KW0kAtaRoKuucaQEtsm'] as $key => $value) {
-    		// 	$result_text11 = $value['date'];
-    		// }
-
-
-
 
 			$ch1 = curl_init();
 			curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
@@ -74,7 +56,8 @@ if (!is_null($events['events'])) {
 
 			$messages = [
 				'type' => 'text',
-				'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11.'ประเภท1 '.$ff
+				'text' => $text. '/n เริ่มประมูลวันที่'.$ff.'/n ราคาประมูลครั้งละ '.$money.' บาท !! /n/n ไปลงทะเบียนกันเลย ><'
+				// 'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11.'ประเภท1 '.$ff
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
