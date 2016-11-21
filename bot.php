@@ -27,11 +27,8 @@ if (!is_null($events['events'])) {
     		foreach ($obj1 as $key => $jsons) {
     			foreach($jsons as $key => $value) {
     				foreach($value as $key => $kk){
-    						if($key == "time"){
-    							$tt = $kk;
-    						}
-    						if($key == $text){
-    						$ff = $tt;
+    						if($key == 'winner'){
+    						$ff = '5555555555555555';
     						}
     				}
 
