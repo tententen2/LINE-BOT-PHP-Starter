@@ -63,14 +63,14 @@ if (!is_null($events['events'])) {
 
 			$image = [
 				'type' => 'image',
-				'originalContentUrl' => "'http://f.ptcdn.info/464/041/000/o505xu5rsDUycpMYem9-o.jpg'",
-				'previewImageUrl' => "'http://sv6.postjung.com/picpost/data/184/184340-1-2995.jpg'"
+				'originalContentUrl' => 'http://f.ptcdn.info/464/041/000/o505xu5rsDUycpMYem9-o.jpg',
+				'previewImageUrl' => 'http://sv6.postjung.com/picpost/data/184/184340-1-2995.jpg'
 
 			];
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
-				'replyToken' => $replyToken,
+				'replyToken' => plyToken,
 				'messages' => $image,
 			];
 			$post = json_encode($data);
