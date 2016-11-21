@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
     					// $ff = $value['detail'];
     				foreach($value as $key => $kk){
     						if($key == 'detail'){
-    							if($kk == $text){
+    							if(strcasecmp($kk,$text) == 0){
     								$ff = $value['time'];
     							}
     						}
