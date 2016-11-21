@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
     		$tmm = '222';
     		foreach ($obj1 as $key => $jsons) {
     			foreach($jsons as $key => $value) {
-    					$ff = $value['time'];
+    					$ff = $value;
     				// foreach($value as $key => $kk){
     				// 		if($key == "time"){
     				// 			$tmm = $kk;
