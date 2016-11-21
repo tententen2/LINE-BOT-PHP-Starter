@@ -97,13 +97,13 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$tem1plat0e],
+				'messages' => [$messages],
 			];
 			
-			// $data1 = [
-			// 	'replyToken' => $replyToken,
-			// 	'messages' => [$image],
-			// ];
+			$data1 = [
+				'replyToken' => $replyToken,
+				'messages' => [$tem1plat0e],
+			];
 			$post = json_encode($data);
 			// $post1 = json_encode($data1);
 
