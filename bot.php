@@ -72,7 +72,7 @@ if (!is_null($events['events'])) {
 			$jsondata = [
 				'type' => 'template',
 				'altText' => 'this is a buttons template',
-				'template' => {
+				'template' => [
 					'type' => 'buttons',
 					'thumbnailImageUrl' => 'https://www.eff.org/files/tor-https-1.png',
 					'title' => 'Menu',
@@ -92,7 +92,7 @@ if (!is_null($events['events'])) {
 							'uri' =>  'http://example.com/page/123'
 						}
 					]
-				}
+				]
 			];
 
 			// $jsonnn = array('type' => 'template','altText' => 'this is a buttons template','template' => array('type' => 'buttons','thumbnailImageUrl' =>
