@@ -54,7 +54,7 @@ if (!is_null($events['events'])) {
 				];
 
 			}else if($text_split[0] == "ประมูล"){
-				$x = 0;
+				$count = 0;
 				$ch3 = curl_init();
     			curl_setopt($ch3, CURLOPT_SSL_VERIFYPEER, false);
     			curl_setopt($ch3, CURLOPT_RETURNTRANSFER,true);
@@ -67,11 +67,11 @@ if (!is_null($events['events'])) {
     					foreach($value as $key => $kk){
     							if($key == 'detail'){
     								if(strpos(strtolower($kk), strtolower($text_split[1])) !== false){
-    									$ff[$x] = $value['time'];
-    									$money[$x] = $value['priceforbit'];
-    									$name[$x] = $kk;
-    									$urlimg[$x] = $value['url'];
-    									$x++;
+    									$ff[$count] = $value['time'];
+    									$money[$count] = $value['priceforbit'];
+    									$name[$count] = $kk;
+    									$urlimg[$count] = $value['url'];
+    									$count += 1; 
     								}
     							}
     						}
@@ -81,7 +81,7 @@ if (!is_null($events['events'])) {
     				if(true){
     					$jsondata = [
 							'type' => 'text',
-							'text' => "ไม่มีการประมูcล : ".$text_split[1].$x
+							'text' => "ไม่มีการประมูcล : ".$text_split[1].$count
 						];
     				}else{
     					if(count($ff) == 0){
