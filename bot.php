@@ -75,19 +75,26 @@ if (!is_null($events['events'])) {
     						}
     					}
     				}
-    				$jsondata = [
-						"type" => "template",
-						"altText" => "this is a buttons template",
-						"template" => [
-						"type" => "buttons",
-						"thumbnailImageUrl" => $urlimg,
-						"title" => $name,
-						"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-						"actions" => [
+    				if(empty($name)){
+    					$jsondata = [
+							'type' => 'text',
+							'text' => "ไม่มีการประมูล :".$text_split[1]
+						];
+    				}else{
+    					$jsondata = [
+							"type" => "template",
+							"altText" => "this is a buttons template",
+							"template" => [
+							"type" => "buttons",
+							"thumbnailImageUrl" => $urlimg,
+							"title" => $name,
+							"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
+							"actions" => [
 						
+								]
 							]
-						]
-					];
+						];
+					}
 			}
 
 			$data = [
