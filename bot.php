@@ -102,26 +102,153 @@ if (!is_null($events['events'])) {
 								]
 								]
 							];
-						}
-
-						// $jsondata2 = [
-						// 	"type" => "template",
-						// 	"altText" => "this is a buttons template",
-						// 	"template" => [
-						// 	"type" => "carousel",
-						// 	"columns" => [
-						// 		[
-						// 		"thumbnailImageUrl" => $urlimg,
-						// 		"title" => $name,
-						// 		"text" => "เริ่มประมูลวันที่11 ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-						// 		"actions" => [
+						}else if(count($ff) == 1){
+							$jsondata = [
+								"type" => "template",
+								"altText" => "this is a buttons template",
+								"template" => [
+								"type" => "carousel",
+								"columns" => [
+									[
+									"thumbnailImageUrl" => $urlimg[0],
+									"title" => $name[0],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[0],0,10)."\r\n"."เวลา ".substr($ff[0],11,18)."\r\n".'บิตขั้นต่ำ '.$money[0].' บาท !!',
+									"actions" => [
 						
-						// 			]
-						// 		]
-						// 	]
-						// 	]
-						// ];
-						// $jsondata = array_merge_recursive( $jsondata1, $jsondata2 );
+										]
+									],[
+									"thumbnailImageUrl" => $urlimg[1],
+									"title" => $name[1],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[1],0,10)."\r\n"."เวลา ".substr($ff[1],11,18)."\r\n".'บิตขั้นต่ำ '.$money[1].' บาท !!',
+									"actions" => [
+						
+										]
+									]
+								]
+								]
+							];
+
+						}else if(count($ff) ==2 ){
+							$jsondata = [
+								"type" => "template",
+								"altText" => "this is a buttons template",
+								"template" => [
+								"type" => "carousel",
+								"columns" => [
+									[
+									"thumbnailImageUrl" => $urlimg[0],
+									"title" => $name[0],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[0],0,10)."\r\n"."เวลา ".substr($ff[0],11,18)."\r\n".'บิตขั้นต่ำ '.$money[0].' บาท !!',
+									"actions" => [
+						
+										]
+									],[
+									"thumbnailImageUrl" => $urlimg[1],
+									"title" => $name[1],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[1],0,10)."\r\n"."เวลา ".substr($ff[1],11,18)."\r\n".'บิตขั้นต่ำ '.$money[1].' บาท !!',
+									"actions" => [
+						
+										]
+									],[
+									"thumbnailImageUrl" => $urlimg[2],
+									"title" => $name[2],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[2],0,10)."\r\n"."เวลา ".substr($ff[2],11,18)."\r\n".'บิตขั้นต่ำ '.$money[2].' บาท !!',
+									"actions" => [
+						
+										]
+									]
+								]
+								]
+							];
+
+						}else if(count($ff) == 3 ){
+							$jsondata = [
+								"type" => "template",
+								"altText" => "this is a buttons template",
+								"template" => [
+								"type" => "carousel",
+								"columns" => [
+									[
+									"thumbnailImageUrl" => $urlimg[0],
+									"title" => $name[0],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[0],0,10)."\r\n"."เวลา ".substr($ff[0],11,18)."\r\n".'บิตขั้นต่ำ '.$money[0].' บาท !!',
+									"actions" => [
+						
+										]
+									],[
+									"thumbnailImageUrl" => $urlimg[1],
+									"title" => $name[1],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[1],0,10)."\r\n"."เวลา ".substr($ff[1],11,18)."\r\n".'บิตขั้นต่ำ '.$money[1].' บาท !!',
+									"actions" => [
+						
+										]
+									],[
+									"thumbnailImageUrl" => $urlimg[2],
+									"title" => $name[2],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[2],0,10)."\r\n"."เวลา ".substr($ff[2],11,18)."\r\n".'บิตขั้นต่ำ '.$money[2].' บาท !!',
+									"actions" => [
+						
+										]
+									],[
+									"thumbnailImageUrl" => $urlimg[3],
+									"title" => $name[3],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[3],0,10)."\r\n"."เวลา ".substr($ff[3],11,18)."\r\n".'บิตขั้นต่ำ '.$money[3].' บาท !!',
+									"actions" => [
+						
+										]
+									]
+								]
+								]
+							];
+
+						}else{
+							$jsondata = [
+								"type" => "template",
+								"altText" => "this is a buttons template",
+								"template" => [
+								"type" => "carousel",
+								"columns" => [
+									[
+									"thumbnailImageUrl" => $urlimg[$count-5],
+									"title" => $name[$count-5],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[$count-5],0,10)."\r\n"."เวลา ".substr($ff[$count-5],11,18)."\r\n".'บิตขั้นต่ำ '.$money[$count-5].' บาท !!',
+									"actions" => [
+						
+										]
+									],[
+									"thumbnailImageUrl" => $urlimg[$count-4],
+									"title" => $name[$count-4],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[$count-4],0,10)."\r\n"."เวลา ".substr($ff[$count-4],11,18)."\r\n".'บิตขั้นต่ำ '.$money[$count-4].' บาท !!',
+									"actions" => [
+						
+										]
+									],[
+									"thumbnailImageUrl" => $urlimg[$count-3],
+									"title" => $name[$count-3],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[$count-3],0,10)."\r\n"."เวลา ".substr($ff[$count-3],11,18)."\r\n".'บิตขั้นต่ำ '.$money[$count-3].' บาท !!',
+									"actions" => [
+						
+										]
+									],[
+									"thumbnailImageUrl" => $urlimg[$count-2],
+									"title" => $name[$count-2],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[$count-2],0,10)."\r\n"."เวลา ".substr($ff[$count-2],11,18)."\r\n".'บิตขั้นต่ำ '.$money[$count-2].' บาท !!',
+									"actions" => [
+						
+										]
+									],[
+									"thumbnailImageUrl" => $urlimg[$count-1],
+									"title" => $name[$count-1],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[$count-1],0,10)."\r\n"."เวลา ".substr($ff[$count-1],11,18)."\r\n".'บิตขั้นต่ำ '.$money[$count-1].' บาท !!',
+									"actions" => [
+						
+										]
+									]
+								]
+								]
+							];
+
+						}
 					}
 			}else{
 				$jsondata = [
