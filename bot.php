@@ -77,7 +77,7 @@ if (!is_null($events['events'])) {
 					"type" => "buttons",
 					"thumbnailImageUrl" => $urlimg,
 					"title" => $name,
-					"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตครั้งละ '.$money.' บาท !!'."\r\n\r\n".'ไปลงทะเบียนกันเลย ><',
+					"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตครั้งละ '.$money.' บาท !!',
 					"actions" => [
 						
 					]
