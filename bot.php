@@ -33,6 +33,7 @@ if (!is_null($events['events'])) {
 					$result_text = $val['extract'];
 				}
 				if(empty($result_text)){
+					$result_text = "2";
 					$ch1 = curl_init();
 					curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
 					curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
