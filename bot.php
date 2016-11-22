@@ -31,7 +31,7 @@ if (!is_null($events['events'])) {
 				foreach($obj['query']['pages'] as $key => $val){
 					$result_text = $val['extract'];
 				}
-				if(empty($result_text)){
+				if(empty($result_text)||$result_text == ""){
 					$ch1 = curl_init();
 					curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
 					curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
@@ -46,8 +46,6 @@ if (!is_null($events['events'])) {
 				if(empty($result_text)){
 					$result_text = 'ไม่พบข้อมูล';
 				}
-
-
 				$jsondata = [
 					'type' => 'text',
 					'text' => "ผลการค้นหา :"."\r\n".$result_text
