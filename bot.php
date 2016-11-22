@@ -77,7 +77,10 @@ if (!is_null($events['events'])) {
 					"type" => "buttons",
 					"thumbnailImageUrl" => $urlimg,
 					"title" => $name,
-					"text" => "เริ่มประมูลวันที่ ",
+					"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ",
+					"actions" => [
+						
+					]
 				]
 			];
 
