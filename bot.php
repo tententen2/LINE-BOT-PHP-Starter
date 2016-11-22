@@ -79,11 +79,7 @@ if (!is_null($events['events'])) {
 					"title" => $name,
 					"text" => substr($ff,0,10),
 					"actions" => [
-						[	
-							"type" => "uri",
-							"label" => "buys",
-							"uri" =>  "http://example.com/page/123"
-						]
+						
 					]
 				]
 			];
