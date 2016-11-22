@@ -61,12 +61,11 @@ if (!is_null($events['events'])) {
     			$retValue = curl_exec($ch3);          
     			curl_close($ch3);
     			$obj1 = json_decode($retValue,true);
-    			$name = "หหหห";
     			foreach ($obj1 as $key => $jsons) {
     				foreach($jsons as $key => $value) {
     					foreach($value as $key => $kk){
     							if($key == 'detail'){
-    								if(strcasecmp($kk,$text) == 0){
+    								if(strcasecmp($kk,$text_split[1]) == 0){
     									$ff = $value['time'];
     									$money = $value['priceforbit'];
     									$name = $kk;
