@@ -210,7 +210,7 @@ if (!is_null($events['events'])) {
 									[
 									"thumbnailImageUrl" => $urlimg[$count-5],
 									"title" => $name[$count-5],
-									"text" => "เริ่มประมูลวันที่ ".substr($ff[$count-5],0,10)."\r\n"."เวลา ".substr($ff[$count-5],11,18)."\r\n".'บิตขั้นต่ำ '.$money[$count-5].' บาท !!',
+									"text" => "เริ่มประมูลวันที่ aa".$count.substr($ff[$count-5],0,10)."\r\n"."เวลา ".substr($ff[$count-5],11,18)."\r\n".'บิตขั้นต่ำ '.$money[$count-5].' บาท !!',
 									"actions" => [
 						
 										]
