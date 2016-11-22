@@ -95,7 +95,7 @@ if (!is_null($events['events'])) {
 						// 	]
 						// ];
 
-						$jsondata = [
+						$jsondata1 = [
 							"type" => "template",
 							"altText" => "this is a buttons template",
 							"template" => [
@@ -108,59 +108,21 @@ if (!is_null($events['events'])) {
 								"actions" => [
 						
 									]
-								],
+								]
+							]
+							]
+						];
+
+						$jsondata2 = [
+							"type" => "template",
+							"altText" => "this is a buttons template",
+							"template" => [
+							"type" => "carousel",
+							"columns" => [
 								[
 								"thumbnailImageUrl" => $urlimg,
 								"title" => $name,
-								"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-								"actions" => [
-						
-									]
-								],
-								[
-								"thumbnailImageUrl" => $urlimg,
-								"title" => $name,
-								"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-								"actions" => [
-						
-									]
-								],
-								[
-								"thumbnailImageUrl" => $urlimg,
-								"title" => $name,
-								"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-								"actions" => [
-						
-									]
-								],
-								[
-								"thumbnailImageUrl" => $urlimg,
-								"title" => $name,
-								"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-								"actions" => [
-						
-									]
-								],
-								[
-								"thumbnailImageUrl" => $urlimg,
-								"title" => $name,
-								"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-								"actions" => [
-						
-									]
-								],
-								[
-								"thumbnailImageUrl" => $urlimg,
-								"title" => $name,
-								"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-								"actions" => [
-						
-									]
-								],
-								[
-								"thumbnailImageUrl" => $urlimg,
-								"title" => $name,
-								"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
+								"text" => "เริ่มประมูลวันที่11 ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
 								"actions" => [
 						
 									]
@@ -168,6 +130,9 @@ if (!is_null($events['events'])) {
 							]
 							]
 						];
+
+						$jsondata[] = json_decode($jsondata1,true);
+						$jsondata[] = json_decode($jsondata2,true);
 					}
 			}else{
 				$jsondata = [
