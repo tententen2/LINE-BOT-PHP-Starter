@@ -77,8 +77,7 @@ if (!is_null($events['events'])) {
     						}
     					}
     				}
-    				// empty($name[0])
-    				if(true){
+    				if(empty($name[0])){
     					$jsondata = [
 							'type' => 'text',
 							'text' => "ไม่มีการประมูcล : ".$text_split[1].$count
