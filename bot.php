@@ -24,23 +24,23 @@ if (!is_null($events['events'])) {
 				$ch1 = curl_init();
 				curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
 				curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($ch1, CURLOPT_URL, 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='.$text_split[1]);
+				curl_setopt($ch1, CURLOPT_URL, 'https://th.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='.$text_split[1]);
 				$result1 = curl_exec($ch1);
 				curl_close($ch1);
 				$obj = json_decode($result1, true);
 				foreach($obj['query']['pages'] as $key => $val){
-					$result_text = substr($val['extract'],0,200);
+					$result_text = substr($val['extract'],0,2000);
 				}
 				if(empty($result_text)){
 					$ch1 = curl_init();
 					curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
 					curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch1, CURLOPT_URL, 'https://th.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='.$text_split[1]);
+					curl_setopt($ch1, CURLOPT_URL, 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='.$text_split[1]);
 					$result1 = curl_exec($ch1);
 					curl_close($ch1);
 					$obj = json_decode($result1, true);
 					foreach($obj['query']['pages'] as $key => $val){ 
-						$result_text = substr($val['extract'],0,200); 
+						$result_text = substr($val['extract'],0,2000); 
 					}
 				}
 				if(empty($result_text)){
