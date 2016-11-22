@@ -21,7 +21,6 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 
 			if($text_split[0] == "ค้นหา"){
-				$result_text = "";
 				$ch1 = curl_init();
 				curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
 				curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
