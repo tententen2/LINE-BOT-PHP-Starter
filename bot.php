@@ -131,8 +131,7 @@ if (!is_null($events['events'])) {
 							]
 						];
 
-						$jsondata[] = json_decode($jsondata1,true);
-						$jsondata[] = json_decode($jsondata2,true);
+						$jsondata = array_merge(json_decode($jsondata1, true),json_decode($jsondata2, true));
 					}
 			}else{
 				$jsondata = [
