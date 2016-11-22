@@ -101,22 +101,22 @@ if (!is_null($events['events'])) {
 							"template" => [
 							"type" => "carousel",
 							"columns" => [
-								{
+								[
 								"thumbnailImageUrl" => $urlimg,
 								"title" => $name,
 								"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
 								"actions" => [
 						
 									]
-								},
-								{
+								],
+								[
 								"thumbnailImageUrl" => $urlimg,
 								"title" => $name,
 								"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
 								"actions" => [
 						
 									]
-								}
+								]
 							]
 							]
 						];
