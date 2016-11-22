@@ -95,7 +95,7 @@ if (!is_null($events['events'])) {
 						// 	]
 						// ];
 
-						$ff = ,
+						$ff = ",
 								[
 								"thumbnailImageUrl" => $urlimg,
 								"title" => $name,
@@ -103,7 +103,7 @@ if (!is_null($events['events'])) {
 								"actions" => [
 						
 									]
-								];
+								]";
 
 						$jsondata = [
 							"type" => "template",
