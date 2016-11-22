@@ -130,8 +130,6 @@ if (!is_null($events['events'])) {
 							]
 							]
 						];
-
-						$jsondata = array_merge(json_decode($jsondata1, true),json_decode($jsondata2, true));
 					}
 			}else{
 				$jsondata = [
@@ -142,7 +140,7 @@ if (!is_null($events['events'])) {
 
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$jsondata],
+				'messages' => [array_merge(json_decode($jsondata1, true),json_decode($jsondata2, true))],
 			];
 			$post = json_encode($data);
 
