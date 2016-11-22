@@ -77,7 +77,7 @@ if (!is_null($events['events'])) {
 					"type" => "buttons",
 					"thumbnailImageUrl" => $urlimg,
 					"title" => $name,
-					"text" => "SSSAAGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+					"text" => substr($ff,0,10)."GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
 					"actions" => [
 						
 					]
