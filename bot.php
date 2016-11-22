@@ -67,38 +67,41 @@ if (!is_null($events['events'])) {
     					foreach($value as $key => $kk){
     							if($key == 'detail'){
     								if(strpos(strtolower($kk), strtolower($text_split[1])) !== false){
-    									$ff = $value['time'];
-    									$money = $value['priceforbit'];
-    									$name = $kk;
-    									$urlimg = $value['url'];
+    									$ff[$x] = $value['time'];
+    									$money[$x] = $value['priceforbit'];
+    									$name[$x] = $kk;
+    									$urlimg[$x] = $value['url'];
+    									$x++;
     								}
     							}
     						}
     					}
     				}
-    				if(empty($name)){
+    				if(empty($name[0])){
     					$jsondata = [
 							'type' => 'text',
 							'text' => "ไม่มีการประมูล2 : ".$text_split[1]
 						];
     				}else{
-						$jsondata = [
-							"type" => "template",
-							"altText" => "this is a buttons template",
-							"template" => [
-							"type" => "carousel",
-							"columns" => [
-								[
-								"thumbnailImageUrl" => $urlimg,
-								"title" => $name,
-								"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-								"actions" => [
+    					if(count($cars) == 1){
+								$jsondata = [
+								"type" => "template",
+								"altText" => "this is a buttons template",
+								"template" => [
+								"type" => "carousel",
+								"columns" => [
+									[
+									"thumbnailImageUrl" => $urlimg[0],
+									"title" => $name[0],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[0],0,10)."\r\n"."เวลา ".substr($ff[0],11,18)."\r\n".'บิตขั้นต่ำ '.$money[0].' บาท !!',
+									"actions" => [
 						
+										]
 									]
 								]
-							]
-							]
-						];
+								]
+							];
+						}
 
 						// $jsondata2 = [
 						// 	"type" => "template",
