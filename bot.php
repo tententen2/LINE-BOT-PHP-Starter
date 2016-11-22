@@ -65,7 +65,7 @@ if (!is_null($events['events'])) {
     				foreach($jsons as $key => $value) {
     					foreach($value as $key => $kk){
     							if($key == 'detail'){
-    								if(preg_match_all('/\w*('.$text_split[1].')+/', $kk,$ggf)){
+    								if(preg_match('/\w*('.$text_split[1].')+/', $kk)){
     									$ff = $value['time'];
     									$money = $value['priceforbit'];
     									$name = $kk;
@@ -78,7 +78,7 @@ if (!is_null($events['events'])) {
     				if(empty($name)){
     					$jsondata = [
 							'type' => 'text',
-							'text' => "ไม่มีการประมูล : ".$text_split[1]
+							'text' => "ไม่มีการประมูล1 : ".$text_split[1]
 						];
     				}else{
     					$jsondata = [
