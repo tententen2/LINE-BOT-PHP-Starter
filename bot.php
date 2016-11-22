@@ -82,7 +82,7 @@ if (!is_null($events['events'])) {
 							'text' => "ไม่มีการประมูล2 : ".$text_split[1]
 						];
     				}else{
-						$jsondata1 = [
+						$jsondata = [
 							"type" => "template",
 							"altText" => "this is a buttons template",
 							"template" => [
@@ -100,24 +100,24 @@ if (!is_null($events['events'])) {
 							]
 						];
 
-						$jsondata2 = [
-							"type" => "template",
-							"altText" => "this is a buttons template",
-							"template" => [
-							"type" => "carousel",
-							"columns" => [
-								[
-								"thumbnailImageUrl" => $urlimg,
-								"title" => $name,
-								"text" => "เริ่มประมูลวันที่11 ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-								"actions" => [
+						// $jsondata2 = [
+						// 	"type" => "template",
+						// 	"altText" => "this is a buttons template",
+						// 	"template" => [
+						// 	"type" => "carousel",
+						// 	"columns" => [
+						// 		[
+						// 		"thumbnailImageUrl" => $urlimg,
+						// 		"title" => $name,
+						// 		"text" => "เริ่มประมูลวันที่11 ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
+						// 		"actions" => [
 						
-									]
-								]
-							]
-							]
-						];
-						$jsondata = array_merge_recursive( $jsondata1, $jsondata2 );
+						// 			]
+						// 		]
+						// 	]
+						// 	]
+						// ];
+						// $jsondata = array_merge_recursive( $jsondata1, $jsondata2 );
 					}
 			}else{
 				$jsondata = [
