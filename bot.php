@@ -54,6 +54,7 @@ if (!is_null($events['events'])) {
 				];
 
 			}else if($text_split[0] == "ประมูล"){
+				$x = 0;
 				$ch3 = curl_init();
     			curl_setopt($ch3, CURLOPT_SSL_VERIFYPEER, false);
     			curl_setopt($ch3, CURLOPT_RETURNTRANSFER,true);
@@ -116,10 +117,7 @@ if (!is_null($events['events'])) {
 							]
 							]
 						];
-
-						$a1 = json_decode( $jsondata1, true );
-						$a2 = json_decode( $jsondata2, true );
-						$jsondata = array_merge_recursive( $a1, $a2 );
+						$jsondata = array_merge_recursive( $jsondata1, $jsondata2 );
 					}
 			}else{
 				$jsondata = [
