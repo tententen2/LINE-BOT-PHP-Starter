@@ -21,7 +21,6 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 
 			if($text_split[0] == "ค้นหา"){
-				$result_text = "";
 				$ch1 = curl_init();
 				curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
 				curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
@@ -30,9 +29,9 @@ if (!is_null($events['events'])) {
 				curl_close($ch1);
 				$obj = json_decode($result1, true);
 				foreach($obj['query']['pages'] as $key => $val){
-					$result_text = $val['extract'];
+					$result_text = substr($val['extract'],0,200);
 				}
-				if(strcmp($result_text,"")==0){
+				if(empty($result_text)){
 					$ch1 = curl_init();
 					curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
 					curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
@@ -41,10 +40,10 @@ if (!is_null($events['events'])) {
 					curl_close($ch1);
 					$obj = json_decode($result1, true);
 					foreach($obj['query']['pages'] as $key => $val){ 
-						$result_text = $val['extract']; 
+						$result_text = substr($val['extract'],0,200); 
 					}
 				}
-				if(strcmp($result_text,"")==0){
+				if(empty($result_text)){
 					$result_text = 'ไม่พบข้อมูล';
 				}
 				$jsondata = [
