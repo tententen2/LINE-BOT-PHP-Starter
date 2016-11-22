@@ -74,7 +74,7 @@ if (!is_null($events['events'])) {
 				"type" => "template",
 				"altText" => "this is a buttons template",
 				"template" => [
-					"type" => "buttons",
+					"type" => "text",
 					"thumbnailImageUrl" => $urlimg,
 					"title" => $name,
 					"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'ราคาประมูลครั้งละ '.$money.' บาท !!'."\r\n\r\n".'ไปลงทะเบียนกันเลย ><',
