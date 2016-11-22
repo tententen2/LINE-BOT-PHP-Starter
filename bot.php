@@ -95,7 +95,7 @@ if (!is_null($events['events'])) {
 						// 	]
 						// ];
 
-						$jsondata1 = [
+						$jsondata = [
 							"type" => "template",
 							"altText" => "this is a buttons template",
 							"template" => [
@@ -108,10 +108,7 @@ if (!is_null($events['events'])) {
 								"actions" => [
 						
 									]
-								]
-						];
-						$jsondata = $jsondata1.[
-							,
+								],
 								[
 								"thumbnailImageUrl" => $urlimg,
 								"title" => $name,
@@ -120,8 +117,8 @@ if (!is_null($events['events'])) {
 						
 									]
 								]
-								]
-								]
+							]
+							]
 						];
 					}
 			}else{
