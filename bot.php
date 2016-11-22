@@ -95,6 +95,16 @@ if (!is_null($events['events'])) {
 						// 	]
 						// ];
 
+						$ff = ,
+								[
+								"thumbnailImageUrl" => $urlimg,
+								"title" => $name,
+								"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
+								"actions" => [
+						
+									]
+								];
+
 						$jsondata = [
 							"type" => "template",
 							"altText" => "this is a buttons template",
@@ -108,15 +118,7 @@ if (!is_null($events['events'])) {
 								"actions" => [
 						
 									]
-								],
-								[
-								"thumbnailImageUrl" => $urlimg,
-								"title" => $name,
-								"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-								"actions" => [
-						
-									]
-								]
+								].$ff
 							]
 							]
 						];
