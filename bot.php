@@ -16,118 +16,85 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			// Build message to reply back
-			 $ch3 = curl_init();
-    		curl_setopt($ch3, CURLOPT_SSL_VERIFYPEER, false);
-    		curl_setopt($ch3, CURLOPT_RETURNTRANSFER,true);
-    		curl_setopt($ch3, CURLOPT_URL,'https://e-auction-c1430.firebaseio.com/product.json');
-    		$retValue = curl_exec($ch3);          
-    		curl_close($ch3);
-    		$obj1 = json_decode($retValue,true);
-    		foreach ($obj1 as $key => $jsons) {
-    			foreach($jsons as $key => $value) {
-    				foreach($value as $key => $kk){
-    						if($key == 'detail'){
-    							if(strcasecmp($kk,$text) == 0){
-    								$ff = $value['time'];
-    								$money = $value['priceforbit'];
-    								$name = $kk;
-    								$urlimg = $value['url'];
+			$text_split = explode('-', $text);
+
+			$url = 'https://api.line.me/v2/bot/message/reply';
+
+			if($text_split[0] == "ค้นหา"){
+				$ch1 = curl_init();
+				curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+				curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch1, CURLOPT_URL, 'https://th.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='.$text_split[1]);
+				$result1 = curl_exec($ch1);
+				curl_close($ch1);
+				$obj = json_decode($result1, true);
+				foreach($obj['query']['pages'] as $key => $val){
+					$result_text = $val['extract'];
+				}
+				if(empty($result_text)){
+					$ch1 = curl_init();
+					curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+					curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
+					curl_setopt($ch1, CURLOPT_URL, 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='.$text_split[1]);
+					$result1 = curl_exec($ch1);
+					curl_close($ch1);
+					$obj = json_decode($result1, true);
+					foreach($obj['query']['pages'] as $key => $val){ 
+						$result_text = $val['extract']; 
+					}
+				}
+				if(empty($result_text)){
+					$result_text = 'ไม่พบข้อมูล';
+				}
+
+
+				$jsondata = [
+					'type' => 'text',
+					'text' => "ผลการค้นหา :"."\r\n\r\n".$result_text
+				];
+
+			}else if($text_split[0] == "ประมูล"){
+				$ch3 = curl_init();
+    			curl_setopt($ch3, CURLOPT_SSL_VERIFYPEER, false);
+    			curl_setopt($ch3, CURLOPT_RETURNTRANSFER,true);
+    			curl_setopt($ch3, CURLOPT_URL,'https://e-auction-c1430.firebaseio.com/product.json');
+    			$retValue = curl_exec($ch3);          
+    			curl_close($ch3);
+    			$obj1 = json_decode($retValue,true);
+    			foreach ($obj1 as $key => $jsons) {
+    				foreach($jsons as $key => $value) {
+    					foreach($value as $key => $kk){
+    							if($key == 'detail'){
+    								if(strcasecmp($kk,$text) == 0){
+    									$ff = $value['time'];
+    									$money = $value['priceforbit'];
+    									$name = $kk;
+    									$urlimg = $value['url'];
+    								}
     							}
     						}
+    					}
     				}
-    			}
-
-    		}
-
-			$ch1 = curl_init();
-			curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
-			curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch1, CURLOPT_URL, 'https://th.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='.$text);
-			$result1 = curl_exec($ch1);
-			curl_close($ch1);
-			$obj = json_decode($result1, true);
-			foreach($obj['query']['pages'] as $key => $val){
-				$result_text = $val['extract'];
-			}
-			if(empty($result_text)){
-				$result_text = 'ไม่พบข้อมูล';
-			}
-
-
-			$tmetme = json_encode($text);
-
-			$messages = [
-				'type' => 'text',
-				'text' => $name."\r\n\r\n".'เริ่มประมูลวันที่ '.substr($ff,0,10)."\r\n".'เวลา '.substr($ff,11,18)."\r\n".'ราคาประมูลครั้งละ '.$money.' บาท !!'."\r\n\r\n".'ไปลงทะเบียนกันเลย ><'.$tmetme
-				// 'text' => 'ผลการค้นหา :'.$result_text.'ความยาว '.$timee.'date '.$result_text11.'ประเภท1 '.$ff
-			];
-
-			$image = [
-				'type' => 'image',
-				'originalContentUrl' => 'https://www.eff.org/files/tor-https-1.png',
-				'previewImageUrl' => 'https://www.eff.org/files/tor-https-1.png'
-
-			];
-
-			$jsondata = [
-				"type" => "template",
-				"altText" => "this is a buttons template",
-				"template" => [
-					"type" => "buttons",
-					"thumbnailImageUrl" => $urlimg,
-					"title" => $name,
-					"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-					"actions" => [
+    				$jsondata = [
+						"type" => "template",
+						"altText" => "this is a buttons template",
+						"template" => [
+						"type" => "buttons",
+						"thumbnailImageUrl" => $urlimg,
+						"title" => $name,
+						"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
+						"actions" => [
 						
-					]
-				]
-			];
+							]
+						]
+					];
+			}
 
-			
-			// [
-			// 				"type" => "postback",
-			// 				"label" => "buy",
-			// 				"data" => "action=buy&itemid=123"	
-			// 			],[
-			// 				"type" => "postback",
-			// 				"label" => "buy1",
-			// 				"data" => "action=buy&itemid=1231"
-			// 			],
-
-
-
-			// $jsondata = [
-			// 	"type"=>"template",
-			// 		  "altText"=>"this is a confirm template",
-			// 		  "template"=>[
-			// 		      "type"=>"confirm",
-			// 		      "text"=> "ssss",
-			// 		      "actions"=> [
-			// 			  [
-			// 			    "type"=>"message",
-			// 			    "label"=>"Yes",
-			// 			    "text"=>"yes"
-			// 			  ],
-			// 			  [
-			// 			    "type"=>"message",
-			// 			    "label"=>"No",
-			// 			    "text"=>"no"
-			// 			  ]
-			// 		      ]
-			// 		]
-			// ];
-
-			// $jsonnn = array('type' => 'template','altText' => 'this is a buttons template','template' => array('type' => 'buttons','thumbnailImageUrl' =>
-			// 	'https://www.eff.org/files/tor-https-1.png','title' => 'Menu','text' => 'Please','actions' => array(array('type' => 'postback','label' => 'date' => 'action=buy&itemid=123'),array('type' => 'postback','label' => 'date' => 'action=buy&itemid=123'),array('type' => 'uri','label' => 'buys' => 'http://example.com/page/123'))));
-			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$jsondata],
 			];
 			$post = json_encode($data);
-			echo $post;
 
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
