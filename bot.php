@@ -83,7 +83,7 @@ if (!is_null($events['events'])) {
 							'text' => "ไม่มีการประมูล2 : ".$text_split[1]
 						];
     				}else{
-    					if(count($cars) == 1){
+    					if(count($ff) == 1){
 								$jsondata = [
 								"type" => "template",
 								"altText" => "this is a buttons template",
