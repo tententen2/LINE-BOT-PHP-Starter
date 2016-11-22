@@ -78,9 +78,6 @@ if (!is_null($events['events'])) {
 					"thumbnailImageUrl" => $urlimg,
 					"title" => $name,
 					"text" => "เริ่มประมูลวันที่ ",
-					"actions" => [
-						
-					]
 				]
 			];
 
