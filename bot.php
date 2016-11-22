@@ -81,20 +81,6 @@ if (!is_null($events['events'])) {
 							'text' => "ไม่มีการประมูล2 : ".$text_split[1]
 						];
     				}else{
-    		// 			$jsondata = [
-						// 	"type" => "template",
-						// 	"altText" => "this is a buttons template",
-						// 	"template" => [
-						// 	"type" => "buttons",
-						// 	"thumbnailImageUrl" => $urlimg,
-						// 	"title" => $name,
-						// 	"text" => "เริ่มประมูลวันที่ ".substr($ff,0,10)."\r\n"."เวลา ".substr($ff,11,18)."\r\n".'บิตขั้นต่ำ '.$money.' บาท !!',
-						// 	"actions" => [
-						
-						// 		]
-						// 	]
-						// ];
-
 						$jsondata1 = [
 							"type" => "template",
 							"altText" => "this is a buttons template",
@@ -131,7 +117,9 @@ if (!is_null($events['events'])) {
 							]
 						];
 
-						$jsondata = $jsondata1.$jsondata2;
+						$a1 = json_decode( $jsondata1, true );
+						$a2 = json_decode( $jsondata2, true );
+						$jsondata = array_merge_recursive( $a1, $a2 );
 					}
 			}else{
 				$jsondata = [
