@@ -208,16 +208,16 @@ if (!is_null($events['events'])) {
 								"type" => "carousel",
 								"columns" => [
 									[
-									"thumbnailImageUrl" => $urlimg[$count-5],
-									"title" => $name[$count-5],
-									"text" => "เริ่มประมูลวันที่ aa".$count.substr($ff[$count-5],0,10)."\r\n"."เวลา ".substr($ff[$count-5],11,18)."\r\n".'บิตขั้นต่ำ '.$money[$count-5].' บาท !!',
+									"thumbnailImageUrl" => $urlimg[count($ff)-5],
+									"title" => $name[count($ff)-5],
+									"text" => "เริ่มประมูลวันที่ aa".$count.substr($ff[count($ff)-5],0,10)."\r\n"."เวลา ".substr($ff[count($ff)-5],11,18)."\r\n".'บิตขั้นต่ำ '.$money[count($ff)-5].' บาท !!',
 									"actions" => [
 						
 										]
 									],[
-									"thumbnailImageUrl" => $urlimg[$count-4],
-									"title" => $name[$count-4],
-									"text" => "เริ่มประมูลวันที่ ".substr($ff[$count-4],0,10)."\r\n"."เวลา ".substr($ff[$count-4],11,18)."\r\n".'บิตขั้นต่ำ '.$money[$count-4].' บาท !!',
+									"thumbnailImageUrl" => $urlimg[count($ff)-4],
+									"title" => $name[count($ff)-4],
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[count($ff)-4],0,10)."\r\n"."เวลา ".substr($ff[count($ff)-4],11,18)."\r\n".'บิตขั้นต่ำ '.$money[count($ff)-4].' บาท !!',
 									"actions" => [
 						
 										]
