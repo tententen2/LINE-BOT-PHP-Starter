@@ -61,6 +61,7 @@ if (!is_null($events['events'])) {
     			$retValue = curl_exec($ch3);          
     			curl_close($ch3);
     			$obj1 = json_decode($retValue,true);
+    			$name = "หหหห";
     			foreach ($obj1 as $key => $jsons) {
     				foreach($jsons as $key => $value) {
     					foreach($value as $key => $kk){
