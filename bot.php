@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 				curl_close($ch1);
 				$obj = json_decode($result1, true);
 				foreach($obj['query']['pages'] as $key => $val){
-					$result_text = substr($val['extract'],0,2000);
+					$result_text = substr($val['extract'],0,1999);
 				}
 				if(empty($result_text)){
 					$ch1 = curl_init();
@@ -40,7 +40,7 @@ if (!is_null($events['events'])) {
 					curl_close($ch1);
 					$obj = json_decode($result1, true);
 					foreach($obj['query']['pages'] as $key => $val){ 
-						$result_text = substr($val['extract'],0,2000); 
+						$result_text = substr($val['extract'],0,1999); 
 					}
 				}
 				if(empty($result_text)){
