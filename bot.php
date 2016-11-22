@@ -79,15 +79,7 @@ if (!is_null($events['events'])) {
 					"title" => $name,
 					"text" => substr($ff,0,10),
 					"actions" => [
-						[
-							"type" => "postback",
-							"label" => "buy",
-							"data" => "action=buy&itemid=123"	
-						],[
-							"type" => "postback",
-							"label" => "buy1",
-							"data" => "action=buy&itemid=1231"
-						],[	
+						[	
 							"type" => "uri",
 							"label" => "buys",
 							"uri" =>  "http://example.com/page/123"
@@ -97,7 +89,15 @@ if (!is_null($events['events'])) {
 			];
 
 			
-
+			// [
+			// 				"type" => "postback",
+			// 				"label" => "buy",
+			// 				"data" => "action=buy&itemid=123"	
+			// 			],[
+			// 				"type" => "postback",
+			// 				"label" => "buy1",
+			// 				"data" => "action=buy&itemid=1231"
+			// 			],
 
 
 
