@@ -65,7 +65,7 @@ if (!is_null($events['events'])) {
     				foreach($jsons as $key => $value) {
     					foreach($value as $key => $kk){
     							if($key == 'detail'){
-    								if(preg_match('/\w*('.$text_split[1].')+/',$kk,$regg)){
+    								if(preg_match_all('/\w*('.$text_split[1].')+/', $kk)){
     									$ff = $value['time'];
     									$money = $value['priceforbit'];
     									$name = $kk;
