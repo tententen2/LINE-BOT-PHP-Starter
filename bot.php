@@ -77,10 +77,11 @@ if (!is_null($events['events'])) {
     						}
     					}
     				}
-    				if(empty($name[0])){
+    				// empty($name[0])
+    				if(true){
     					$jsondata = [
 							'type' => 'text',
-							'text' => "ไม่มีการประมูล3 : ".$text_split[1]
+							'text' => "ไม่มีการประมูล : ".$text_split[1].count($ff)
 						];
     				}else{
     					if(count($ff) == 0){
