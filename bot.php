@@ -80,10 +80,10 @@ if (!is_null($events['events'])) {
     				if(empty($name[0])){
     					$jsondata = [
 							'type' => 'text',
-							'text' => "ไม่มีการประมูcล : ".$text_split[1].$count
+							'text' => "ไม่มีการประมูcล : ".$text_split[1]
 						];
     				}else{
-    					if(count($ff) == 0){
+    					if(count($ff) == 1){
 								$jsondata = [
 								"type" => "template",
 								"altText" => "this is a buttons template",
@@ -101,7 +101,7 @@ if (!is_null($events['events'])) {
 								]
 								]
 							];
-						}else if(count($ff) == 1){
+						}else if(count($ff) == 2){
 							$jsondata = [
 								"type" => "template",
 								"altText" => "this is a buttons template",
@@ -127,7 +127,7 @@ if (!is_null($events['events'])) {
 								]
 							];
 
-						}else if(count($ff) ==2 ){
+						}else if(count($ff) == 3){
 							$jsondata = [
 								"type" => "template",
 								"altText" => "this is a buttons template",
@@ -160,7 +160,7 @@ if (!is_null($events['events'])) {
 								]
 							];
 
-						}else if(count($ff) == 3 ){
+						}else if(count($ff) == 4 ){
 							$jsondata = [
 								"type" => "template",
 								"altText" => "this is a buttons template",
