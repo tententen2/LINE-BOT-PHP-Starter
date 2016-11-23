@@ -55,7 +55,7 @@ if (!is_null($events['events'])) {
 				if(empty($result_text)){
 					$result_text = 'ไม่พบข้อมูล';
 				}
-				$result_text = filter_var($result_text, FILTER_SANITIZE_URL);
+				$result_text = filter_var($result_text, FILTER_SANITIZE_STRING , FILTER_FLAG_STRIP_BACKTICK);
 				$jsondata = [
 					'type' => 'text',
 					'text' => 'ผลการค้นหา1 :'."\r\n"."\"".$result_text."\""
