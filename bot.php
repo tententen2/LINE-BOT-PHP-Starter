@@ -52,7 +52,7 @@ if (!is_null($events['events'])) {
 				}
 				$jsondata = [
 					'type' => 'text',
-					'text' => "ผลการค้นหา :"."\r\n".$kkk.$result_text
+					'text' => "ผลการค้นหา :"."\r\n".$kkk
 				];
 
 			}else if($text_split[0] == "ประมูล"){
