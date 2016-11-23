@@ -30,10 +30,11 @@ if (!is_null($events['events'])) {
 				$obj = json_decode($result1, true);
 				foreach($obj['query']['pages'] as $key => $val){
 					$result_text = $val['extract'];
-				}
-									if(strlen($result_text) > 1950){
+					if(strlen($result_text) > 1950){
 							$result_text = substr($result_text,0,1950);
 					}
+				}
+									
 
 				if(empty($result_text)){
 					$ch1 = curl_init();
@@ -44,11 +45,12 @@ if (!is_null($events['events'])) {
 					curl_close($ch1);
 					$obj = json_decode($result1, true);
 					foreach($obj['query']['pages'] as $key => $val){ 
-						$result_text = $val['extract']; 
+						$result_text = $val['extract'];
+						if(strlen($result_text) > 1950){
+						$result_text = substr($result_text,0,1950);
+						} 
 					}
-					if(strlen($result_text) > 1950){
-							$result_text = substr($result_text,0,1950);
-					}
+					
 				}
 				if(empty($result_text)){
 					$result_text = 'ไม่พบข้อมูล';
