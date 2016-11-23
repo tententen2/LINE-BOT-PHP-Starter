@@ -55,7 +55,7 @@ if (!is_null($events['events'])) {
 				if(empty($result_text)){
 					$result_text = 'ไม่พบข้อมูล';
 				}
-				$result_text = preg_replace("/[^a-zA-Z0-9ก-๙]+/", "", $result_text);
+				$result_text = preg_replace("/[^a-zA-Z0-9_ก-๙]+/", "", $result_text);
 				$jsondata = [
 					'type' => 'text',
 					'text' => 'ผลการค้นหา1 :'."\r\n"."\"".$result_text."\""
