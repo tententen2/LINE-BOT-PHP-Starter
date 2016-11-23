@@ -45,15 +45,14 @@ if (!is_null($events['events'])) {
 				}
 				if(empty($result_text)){
 					$result_text = 'ไม่พบข้อมูล';
+				}else{
+					if(strlen($result_text) > 1950){
+							$result_text = substr($result_text,0,1949);
+					}
 				}
-				// else{
-				// 	if(strlen($result_text) >= 200){
-				// 			$result_text = substr($result_text,0,200);
-				// 	}
-				// }
 				$jsondata = [
 					'type' => 'text',
-					'text' => "ผลการค้นหา :"."\r\n".substr($result_text,0,1950);
+					'text' => "ผลการค้นหา :"."\r\n".$result_text
 				];
 
 			}else if($text_split[0] == "ประมูล"){
