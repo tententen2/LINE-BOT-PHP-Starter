@@ -57,7 +57,7 @@ if (!is_null($events['events'])) {
 				}
 				$jsondata = [
 					'type' => 'text',
-					'text' => 'ผลการค้นหา1 :'."\r\n"."\"".(string)$result_text."\""
+					'text' => (string)('ผลการค้นหา1 :'."\r\n"."\"".$result_text."\"")
 				];
 
 			}else if($text_split[0] == "ประมูล"){
