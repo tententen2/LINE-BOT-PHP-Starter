@@ -45,10 +45,10 @@ if (!is_null($events['events'])) {
 				}
 				if(empty($result_text)){
 					$result_text = 'ไม่พบข้อมูล';
-				}
-				$kkk = strlen($result_text);
-				if(strlen($result_text)>1500){
-						$result_text = substr($result_text,0,1500);
+				}else{
+					if(strlen($result_text)>1500){
+							$result_text = substr($result_text,0,1500);
+					}
 				}
 				$jsondata = [
 					'type' => 'text',
