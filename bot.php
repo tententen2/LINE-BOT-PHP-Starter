@@ -55,7 +55,7 @@ if (!is_null($events['events'])) {
 				if(empty($result_text)){
 					$result_text = 'ไม่พบข้อมูล';
 				}
-				$result_text = str_replace("\\n","",$result_text);
+				$result_text = str_replace("/\n","",$result_text);
 				$jsondata = [
 					'type' => 'text',
 					'text' => 'ผลการค้นหา :'."\r\n".$result_text
