@@ -46,7 +46,7 @@ if (!is_null($events['events'])) {
 				if(empty($result_text)){
 					$result_text = 'ไม่พบข้อมูล';
 				}else{
-					if(strlen($result_text)>1900)
+					if(strlen($result_text)>=1900)
 						$result_text = substr($result_text,0,1900);
 				}
 				$jsondata = [
