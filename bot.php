@@ -52,9 +52,7 @@ if (!is_null($events['events'])) {
 					}
 					
 				}
-				if(filter_var($result_text, FILTER_SANITIZE_FULL_SPECIAL_CHARS)==0){
-					$result_text = 'ไม่พบข้อมูล';
-				}
+				$result_text = filter_var($result_text, FILTER_SANITIZE_SPECIAL_CHARS,FILTER_FLAG_STRIP_LOW);
 				if(empty($result_text)){
 					$result_text = 'ไม่พบข้อมูล';
 				}
