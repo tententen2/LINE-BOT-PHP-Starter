@@ -100,14 +100,9 @@ if (!is_null($events['events'])) {
 									[
 									"thumbnailImageUrl" => $urlimg[0],
 									"title" => $name[0],
-									"text" => "เริ่มประมูลวันที่ ".substr($ff[0],0,10)."\r\n"."เวลา ".substr($ff[0],11,18)."\r\n".'บิตขั้นต่ำ '.$money[0].' บาท !!',
+									"text" => "haha",
 									"actions" => [
-													[
-														"type" => "post",
-														"label" => "buy",
-														"data" => "action=buy"
-													]
-						
+
 										]
 									]
 								]
