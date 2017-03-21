@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $access_token = 'rbyP45xdfrt81l84a4luzx9sZp0XUb0Ap6mKkaX7ljvAwVFNTR4X3Bzk5DlNsWATTcUD6XSLFI8wUTlozlhkAP9wxLemKSBavkmBr1kg21R0bHU2DZSXPJCynH69ScZZEJNY0g59fcCrva2C2DO8iAdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			$text_split = explode('-', $text);
+			$text_split = explode('-', $text); ค้นหา-ประมูล
 
 			$url = 'https://api.line.me/v2/bot/message/reply';
 
@@ -60,7 +60,7 @@ if (!is_null($events['events'])) {
 					'text' => 'ผลการค้นหา :'."\r\n"."\"".$result_text."\""
 				];
 
-			}else if($text_split[0] == "ประมูล"){
+			}else if($text_split[0] == "ประมูล"){ ประมูล-t
 				$count = 0;
 				$ch3 = curl_init();
     			curl_setopt($ch3, CURLOPT_SSL_VERIFYPEER, false);
@@ -87,7 +87,7 @@ if (!is_null($events['events'])) {
     				if(empty($name[0])){
     					$jsondata = [
 							'type' => 'text',
-							'text' => "ไม่มีการประมูcล : ".$text_split[1]
+							'text' => "ไม่มีการประมูล : ".$text_split[1]
 						];
     				}else{
     					if(count($ff) == 1){
