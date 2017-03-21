@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			$text_split = explode('-', $text); ค้นหา-ประมูล
+			$text_split = explode('-', $text);
 
 			$url = 'https://api.line.me/v2/bot/message/reply';
 
@@ -60,7 +60,7 @@ if (!is_null($events['events'])) {
 					'text' => 'ผลการค้นหา :'."\r\n"."\"".$result_text."\""
 				];
 
-			}else if($text_split[0] == "ประมูล"){ ประมูล-t
+			}else if($text_split[0] == "ประมูล"){
 				$count = 0;
 				$ch3 = curl_init();
     			curl_setopt($ch3, CURLOPT_SSL_VERIFYPEER, false);
