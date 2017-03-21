@@ -110,7 +110,7 @@ if (!is_null($events['events'])) {
 							// ];
 							$jsondata = [
 							'type' => 'text',
-							'text' => "ไม่มีการประมูล : ".$text_split[1].$urlimg[0]."HHHHH ".$name[0]."FFFF ".$money[0]
+							'text' => "ไม่มีการประมูล : ".$text_split[1].$urlimg[0]."HHHHH ".substr($ff[0],0,10)."FFFF ".substr($ff[0],11,18)
 						];
 
 						}else if(count($ff) == 2){
