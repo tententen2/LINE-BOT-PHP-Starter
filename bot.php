@@ -110,7 +110,7 @@ if (!is_null($events['events'])) {
 							// ];
 							$jsondata = [
 							'type' => 'text',
-							'text' => "ไม่มีการประมูล : ".$text_split[1]
+							'text' => "ไม่มีการประมูล : ".$text_split[1].$urlimg[0].$name[0]
 						];
 
 						}else if(count($ff) == 2){
