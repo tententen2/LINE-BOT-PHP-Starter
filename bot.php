@@ -99,8 +99,8 @@ if (!is_null($events['events'])) {
 								"columns" => [
 									[
 									"thumbnailImageUrl" => $urlimg[0],
-									"title" => $name[0],
-									"text" => "haha",
+									"title" => "haha",
+									"text" => "เริ่มประมูลวันที่ ".substr($ff[0],0,10)."\r\n"."เวลา ".substr($ff[0],11,18)."\r\n".'บิตขั้นต่ำ '.$money[0].' บาท !!',
 									"actions" => [
 
 										]
