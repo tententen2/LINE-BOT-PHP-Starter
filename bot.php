@@ -93,7 +93,7 @@ if (!is_null($events['events'])) {
     					if(count($ff) == 1){
 								$jsondata = [
 								"type" => "template",
-								"altText" => "this is a buttons template",
+								"altText" => "this is a carousel template",
 								"template" => [
 								"type" => "carousel",
 								"columns" => [
