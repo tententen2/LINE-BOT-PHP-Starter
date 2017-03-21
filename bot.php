@@ -98,8 +98,8 @@ if (!is_null($events['events'])) {
 								"type" => "carousel",
 								"columns" => [
 									[
-									"thumbnailImageUrl" => $urlimg[0],
-									"title" => "haha",
+									"thumbnailImageUrl" => "https://f.ptcdn.info/473/014/000/1389701321-1387524850-o.png",
+									"title" => $name[0],
 									"text" => "เริ่มประมูลวันที่ ".substr($ff[0],0,10)."\r\n"."เวลา ".substr($ff[0],11,18)."\r\n".'บิตขั้นต่ำ '.$money[0].' บาท !!',
 									"actions" => [
 
