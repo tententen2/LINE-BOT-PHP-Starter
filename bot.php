@@ -1,6 +1,5 @@
 <?php
 $access_token = 'rbyP45xdfrt81l84a4luzx9sZp0XUb0Ap6mKkaX7ljvAwVFNTR4X3Bzk5DlNsWATTcUD6XSLFI8wUTlozlhkAP9wxLemKSBavkmBr1kg21R0bHU2DZSXPJCynH69ScZZEJNY0g59fcCrva2C2DO8iAdB04t89/1O/w1cDnyilFU=';
-
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -15,11 +14,8 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
 			$text_split = explode('-', $text);
-
 			$url = 'https://api.line.me/v2/bot/message/reply';
-
 			if($text_split[0] == "ค้นหา"){
 				$ch1 = curl_init();
 				curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
@@ -35,7 +31,6 @@ if (!is_null($events['events'])) {
 					}
 				}
 									
-
 				if(empty($result_text)){
 					$ch1 = curl_init();
 					curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
@@ -59,7 +54,6 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' => 'ผลการค้นหา :'."\r\n"."\"".$result_text."\""
 				];
-
 			}else if($text_split[0] == "ประมูล"){
 				$count = 0;
 				$ch3 = curl_init();
@@ -87,28 +81,27 @@ if (!is_null($events['events'])) {
     				if(empty($name[0])){
     					$jsondata = [
 							'type' => 'text',
-							'text' => "ไม่มีการประมูล : ".$text_split[1]
+							'text' => "ไม่มีการประมูcล : ".$text_split[1]
 						];
     				}else{
     					if(count($ff) == 1){
 								$jsondata = [
 								"type" => "template",
-								"altText" => "this is a carousel template",
+								"altText" => "this is a buttons template",
 								"template" => [
 								"type" => "carousel",
 								"columns" => [
 									[
-									"thumbnailImageUrl" => "https://f.ptcdn.info/473/014/000/1389701321-1387524850-o.png",
+									"thumbnailImageUrl" => $urlimg[0],
 									"title" => $name[0],
 									"text" => "เริ่มประมูลวันที่ ".substr($ff[0],0,10)."\r\n"."เวลา ".substr($ff[0],11,18)."\r\n".'บิตขั้นต่ำ '.$money[0].' บาท !!',
 									"actions" => [
-
+						
 										]
 									]
 								]
 								]
 							];
-
 						}else if(count($ff) == 2){
 							$jsondata = [
 								"type" => "template",
@@ -134,7 +127,6 @@ if (!is_null($events['events'])) {
 								]
 								]
 							];
-
 						}else if(count($ff) == 3){
 							$jsondata = [
 								"type" => "template",
@@ -167,7 +159,6 @@ if (!is_null($events['events'])) {
 								]
 								]
 							];
-
 						}else if(count($ff) == 4 ){
 							$jsondata = [
 								"type" => "template",
@@ -207,7 +198,6 @@ if (!is_null($events['events'])) {
 								]
 								]
 							];
-
 						}else{
 							$jsondata = [
 								"type" => "template",
@@ -254,7 +244,6 @@ if (!is_null($events['events'])) {
 								]
 								]
 							];
-
 						}
 					}
 			}else{
@@ -263,15 +252,12 @@ if (!is_null($events['events'])) {
 					'text' => "กรุณาพิมพิ์ให้ถูกต้องตามเงื่อนไข :"."\r\n"."1. ถ้าต้องการค้นหาให้พิมพ์"."\r\n"." ค้นหา-ตามด้วยสิ่งที่ต้องการค้น"."\r\n"."2. ถ้าต้องการหาสินค้าประมูลให้พิมพ์"."\r\n"." ประมูล-ชื่อของประมูล"
 				];
 			}
-
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$jsondata],
 			];
 			$post = json_encode($data);
-
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
