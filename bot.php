@@ -91,23 +91,28 @@ if (!is_null($events['events'])) {
 						];
     				}else{
     					if(count($ff) == 1){
-								$jsondata = [
-								"type" => "template",
-								"altText" => "this is a carousel template",
-								"template" => [
-								"type" => "carousel",
-								"columns" => [
-									[
-									"thumbnailImageUrl" => $urlimg[0],
-									"title" => $name[0],
-									"text" => "เริ่มประมูลวันที่ ".substr($ff[0],0,10)."\r\n"."เวลา ".substr($ff[0],11,18)."\r\n".'บิตขั้นต่ำ '.$money[0].' บาท !!',
-									"actions" => [
+							// 	$jsondata = [
+							// 	"type" => "template",
+							// 	"altText" => "this is a carousel template",
+							// 	"template" => [
+							// 	"type" => "carousel",
+							// 	"columns" => [
+							// 		[
+							// 		"thumbnailImageUrl" => $urlimg[0],
+							// 		"title" => $name[0],
+							// 		"text" => "เริ่มประมูลวันที่ ".substr($ff[0],0,10)."\r\n"."เวลา ".substr($ff[0],11,18)."\r\n".'บิตขั้นต่ำ '.$money[0].' บาท !!',
+							// 		"actions" => [
 						
-										]
-									]
-								]
-								]
-							];
+							// 			]
+							// 		]
+							// 	]
+							// 	]
+							// ];
+							$jsondata = [
+							'type' => 'text',
+							'text' => "ไม่มีการประมูล : ".$text_split[1]
+						];
+
 						}else if(count($ff) == 2){
 							$jsondata = [
 								"type" => "template",
