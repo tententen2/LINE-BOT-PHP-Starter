@@ -87,7 +87,7 @@ if (!is_null($events['events'])) {
     				if(empty($name[0])){
     					$jsondata = [
 							"type" => "text",
-							"text" => "ไม่มีการประมูล : ".$text_split[1]
+							"text" => "ไม่มีการประมูล h: ".$text_split[1]
 						];
     				}else{
     					if(count($ff) == 1){
