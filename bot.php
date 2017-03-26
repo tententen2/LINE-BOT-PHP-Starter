@@ -87,12 +87,12 @@ if (!is_null($events['events'])) {
     				if(empty($name[0])){
     					$jsondata = [
 							"type" => "text",
-							"text" => "ไม่มีการประมูล h: ".$text_split[1]
+							"text" => "ไม่มีการประมูล hg: ".$text_split[1]
 						];
     				}else{
     					if(count($ff) == 1){
 								$jsondata = [
-								'type' => "template",
+								'type' => 'template',
 								'altText' => "this is a carousel template",
 								'template' => [
 								'type' => 'carousel',
